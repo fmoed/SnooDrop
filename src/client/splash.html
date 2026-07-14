@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height, user-scalable=0"
+    />
+    <title>SnooDrop - Subreddit Merge Game</title>
+    <!-- Modern Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="splash.css" />
+  </head>
+  <body class="app">
+    <div class="lobby-card">
+      <div class="logo-container">
+        <div class="glow-ring"></div>
+        <img class="snoo" src="/snoo.png" alt="Snoo" />
+      </div>
+      
+      <h1 class="title">SnooDrop</h1>
+      <p class="welcome-text" id="welcome-text">Loading user profile...</p>
+      
+      <!-- Premium Player Profile Card -->
+      <div id="profile-card" class="profile-card" style="display: none;">
+        <div class="profile-main">
+          <span id="profile-username" class="profile-username">u/anonymous</span>
+          <span id="profile-active-badge" class="profile-active-badge">No Badges</span>
+        </div>
+        <div class="profile-stats-grid">
+          <div class="profile-stat-box">
+            <span class="stat-icon">🔥</span>
+            <div class="stat-text">
+              <span id="profile-streak" class="stat-value">0d</span>
+              <span class="stat-label">Top 10 Streak</span>
+            </div>
+          </div>
+          <div class="profile-stat-box">
+            <span class="stat-icon">🏆</span>
+            <div class="stat-text">
+              <span id="profile-pb" class="stat-value">0</span>
+              <span class="stat-label">Personal Best</span>
+            </div>
+          </div>
+          <div class="profile-stat-box">
+            <span class="stat-icon">🌐</span>
+            <div class="stat-text">
+              <span id="profile-rank" class="stat-value">-</span>
+              <span class="stat-label">Global Rank</span>
+            </div>
+          </div>
+        </div>
+        <div id="profile-all-badges" class="profile-all-badges"></div>
+      </div>
+
+      <div class="tabs-container">
+        <button id="tab-guide" class="tab-btn active">HOW TO PLAY</button>
+        <button id="tab-leaderboard" class="tab-btn">LEADERBOARD</button>
+      </div>
+
+      <div id="guide-content" class="tab-content active-content">
+        <div class="features-list">
+          <div class="feature-item">
+            <span class="feature-icon">🧩</span>
+            <div class="feature-desc">
+              <strong>Reddit Merge Physics</strong>
+              <span>Drop & merge Upvotes, Comments, and Posts to grow items!</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">⏱️</span>
+            <div class="feature-desc">
+              <strong>Daily Seed</strong>
+              <span>A globally synchronized sequence of drops generated every 24 hours.</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">👑</span>
+            <div class="feature-desc">
+              <strong>Subreddit Flair</strong>
+              <span>Merge to Tier 12 (Cosmic Trophy) to unlock the Glowing User Flair!</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">⚔️</span>
+            <div class="feature-desc">
+              <strong>Subreddit War</strong>
+              <span>Contribute to your subreddit's score and raid rivals to place traps!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="leaderboard-content" class="tab-content" style="display: none;">
+        <!-- Sub Leaderboard pill-toggles -->
+        <div class="leaderboard-filters">
+          <button id="filter-daily" class="filter-btn active">Today</button>
+          <button id="filter-streaks" class="filter-btn">Streaks</button>
+          <button id="filter-global" class="filter-btn">Global</button>
+        </div>
+        
+        <div id="lobby-leaderboard-list" class="lobby-leaderboard-list">
+          <div class="leaderboard-loading">Loading top players...</div>
+        </div>
+
+        <!-- Sticky Standing footer -->
+        <div id="my-standing-footer" class="my-standing-footer" style="display: none;">
+          <span id="standing-title" class="footer-rank">Standing: #--</span>
+          <span id="standing-details" class="footer-detail">Score: 0 | Streak: 0d</span>
+        </div>
+      </div>
+
+      <button class="start-button" id="start-button">START DAILY RUN</button>
+    </div>
+
+    <footer class="footer">
+      <div class="docs-link" tabindex="0" id="docs-link">Reddit Dev Platform</div>
+      <span class="divider">|</span>
+      <div class="docs-link" tabindex="0" id="playtest-link">r/Devvit</div>
+      <span class="divider">|</span>
+      <div class="docs-link" tabindex="0" id="discord-link">Discord</div>
+    </footer>
+    <script type="module" src="splash.ts" defer></script>
+  </body>
+</html>
