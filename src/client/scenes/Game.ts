@@ -668,7 +668,7 @@ export class Game extends Scene {
     this.headerBg.strokeRoundedRect(10, 10, width - 20, 100, 8);
 
     // Interactive Mute Toggle Button for mobile
-    this.muteButton = this.add.text(width - 45, 80, SoundSynth.getMuteState() ? '🔇' : '🔊', {
+    this.muteButton = this.add.text(width - 45, 30, SoundSynth.getMuteState() ? '🔇' : '🔊', {
       fontFamily: 'Outfit, Arial, sans-serif',
       fontSize: '18px'
     }).setOrigin(0.5)
@@ -723,7 +723,7 @@ export class Game extends Scene {
     }
 
     // Next Drop Title
-    this.mobileNextDropLabel = this.add.text(width - 130, 20, 'Next Drop:', {
+    this.mobileNextDropLabel = this.add.text(width - 130, 65, 'Next Drop:', {
       fontFamily: 'Outfit, Arial, sans-serif',
       fontSize: '13px',
       color: '#a0aabf',
@@ -1261,7 +1261,7 @@ export class Game extends Scene {
       const sidebarWidth = 190;
       this.nextItemIcon = this.createItemSprite(rightX + sidebarWidth / 2, this.containerTop + 75, nextTier, false, 0.65);
     } else {
-      this.nextItemIcon = this.createItemSprite(this.scale.width - 50, 45, nextTier, false, 0.6);
+      this.nextItemIcon = this.createItemSprite(this.scale.width - 50, 80, nextTier, false, 0.6);
     }
   }
 
